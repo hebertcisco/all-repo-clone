@@ -2,10 +2,11 @@
   "name": "all-repo-clone",
   "version": "0.0.1",
   "description": "Powerful and flexible programmatic interface for the git clone command",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/all-repo-clone.js",
+  "types": "lib/all-repo-clone.d.ts",
   "scripts": {
-    "build": "npm run rm-axios && tsc",
+    "pkg": "pkg --out-path lib ./lib/all-repo-clone.js",
+    "build": "npm run rm-axios && npm run rm-lib && tsc && npm run pkg",
     "format": "prettier --write \"src/**/*.(js|ts)\"",
     "lint": "eslint src --ext .js,.ts",
     "lint:fix": "eslint src --fix --ext .js,.ts",
@@ -15,7 +16,16 @@
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "rimraf": "rimraf",
+    "tsc": "tsc",
+    "rm-lib": "rimraf lib"
+  },
+   "pkg": {
+    "scripts": "lib/**/*.js",
+    "assets": "views/**/*",
+    "targets": [ "node16-linux-arm64", "node16-linux-x64", "node16-macos-x64", "node16-win-x64"],
+    "outputPath": "lib"
   },
   "repository": {
     "type": "git",
@@ -42,6 +52,7 @@
     "eslint-plugin-jest": "25.7.0",
     "jest": "27.4.7",
     "nodemon": "^2.0.15",
+    "pkg": "^5.5.2",
     "prettier": "2.5.1",
     "rimraf": "^3.0.2",
     "ts-jest": "27.1.3",
