@@ -1,4 +1,4 @@
-export interface IRepo{
-    name?: string;
-    clone_url: string;
+export interface IRepo {
+  name?: string;
+  clone_url: string;
 }

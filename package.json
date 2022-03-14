@@ -1,6 +1,6 @@
 {
   "name": "all-repo-clone",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Powerful and flexible programmatic interface for the git clone command",
   "main": "lib/all-repo-clone.js",
   "types": "lib/all-repo-clone.d.ts",
