@@ -1,6 +1,6 @@
 {
   "name": "all-repo-clone",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Powerful and flexible programmatic interface for the git clone command",
   "main": "lib/all-repo-clone.js",
   "types": "lib/all-repo-clone.d.ts",
@@ -8,7 +8,8 @@
     "generate-ps1-install": "node scripts/generate-ps1-install-file.js",
     "pkg": "pkg --out-path lib -t node16-win-x64 ./lib/all-repo-clone.js",
     "build": "npm run rm-axios && npm run rm-lib && tsc && npm run pkg",
-    "postbuild": "npm run generate-ps1-install",
+    "postbuild": "npm run generate-ps1-install && npm run zip:build",
+    "zip:build": "node zip.mjs",
     "format": "prettier --write \"src/**/*.(js|ts)\"",
     "lint": "eslint src --ext .js,.ts",
     "lint:fix": "eslint src --fix --ext .js,.ts",
