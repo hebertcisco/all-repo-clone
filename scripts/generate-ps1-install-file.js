@@ -54,6 +54,6 @@ if (!(";$Path;".ToLower() -like "*;$BinDir;*".ToLower())) {
 }
 
 Write-Output "AllRepoClone was installed successfully to $AllRepoCloneExe"
-Write-Output "Run 'all_repo_clone --help' to get started"
+Write-Output "Run 'all-repo-clone --help' to get started"
   `,
 );
