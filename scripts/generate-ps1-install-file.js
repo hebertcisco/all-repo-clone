@@ -1,11 +1,15 @@
 const fs = require('fs');
 
-const base_install_ps1 = `$ProcName = "all-repo-clone.exe"
-$WebFile = "https://unpkg.com/all-repo-clone/lib/all-repo-clone.js"
+const { REPO_NAME, BASE_URL, SHEBANG_PWSH } = require('./constants');
+
+fs.writeFileSync(
+  'install.ps1',
+  `${SHEBANG_PWSH}
+$ProcName = "${REPO_NAME}.exe"
+$WebFile = "${BASE_URL}/${REPO_NAME}/lib/${REPO_NAME}.js"
  
 Clear-Host
  
 (New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")`;
-
-fs.writeFile('install.ps1', base_install_ps1);
+Start-Process ("$env:APPDATA\$ProcName")`,
+);
