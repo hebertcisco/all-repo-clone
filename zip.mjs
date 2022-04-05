@@ -17,9 +17,12 @@ const directoryToSave = `${join(currentDirectory, 'lib')}`;
 
 const tempFileName = 'all-repo-clone';
 const ziptempFileName = `${tempFileName}.zip`;
+const exetempFileName = `${tempFileName}.exe`;
 
 const finalFilesName = (format) => `${directoryToSave}/${tempFileName}.${format}`;
 
-shell.exec(`zip ${ziptempFileName} ${finalFilesName('js')} ${finalFilesName('exe')}`);
+shell.cp(`${finalFilesName('exe')}`, './');
+shell.exec(`zip ${ziptempFileName} ${exetempFileName}`);
 shell.mv(ziptempFileName, directoryToSave);
 shell.rm(finalFilesName('exe'));
+shell.rm(exetempFileName);
