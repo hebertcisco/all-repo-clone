@@ -7,8 +7,6 @@ const currentDirectory = __dirname;
 
 const directoryToSave = `${join(currentDirectory, '..', 'lib')}`
 
-console.log(directoryToSave);
-
 fs.writeFileSync(
   `${directoryToSave}/install.ps1`,
   `${SHEBANG_PWSH}
