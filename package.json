@@ -5,7 +5,7 @@
   "main": "lib/all-repo-clone.js",
   "types": "lib/all-repo-clone.d.ts",
   "scripts": {
-    "generate-ps1-install": "scripts/generate-ps1-install-file.js",
+    "generate-ps1-install": "node scripts/generate-ps1-install-file.js",
     "pkg": "pkg --out-path lib -t node16-win-x64 ./lib/all-repo-clone.js",
     "build": "npm run rm-axios && npm run rm-lib && tsc && npm run pkg",
     "postbuild": "npm run generate-ps1-install",
