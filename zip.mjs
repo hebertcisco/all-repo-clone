@@ -17,8 +17,5 @@ const directoryToSave = `${join(currentDirectory, 'lib')}`;
 
 const finalFilesName = (format) => `${directoryToSave}/all-repo-clone.${format}`;
 
-const outputZipName = finalFilesName('zip');
-
-const command = `zip ${outputZipName} ${finalFilesName('js')} ${finalFilesName('exe')}`;
-shell.exec(command);
+shell.exec(`zip ${finalFilesName('zip')} ${finalFilesName('js')} ${finalFilesName('exe')}`);
 shell.rm(finalFilesName('exe'));
