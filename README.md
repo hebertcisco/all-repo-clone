@@ -7,12 +7,6 @@
   </p>
  <h3 align="center">Systems on which it has been tested:</h3>
  <p align="center">
-   <a href="https://www.apple.com/br/macos/">
-      <img alt="Macos" src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white&style=flat" />
-    </a>
-    <a href="https://ubuntu.com/download">
-      <img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white&style=flat" />
-    </a>
     <a href="https://www.microsoft.com/pt-br/windows/">
       <img alt="Windows" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white&style=flat" />
     </a>
