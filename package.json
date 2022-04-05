@@ -1,11 +1,11 @@
 {
   "name": "all-repo-clone",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Powerful and flexible programmatic interface for the git clone command",
   "main": "lib/all-repo-clone.js",
   "types": "lib/all-repo-clone.d.ts",
   "scripts": {
-    "pkg": "pkg --out-path lib ./lib/all-repo-clone.js",
+    "pkg": "pkg --out-path lib -t node16-win-x64 ./lib/all-repo-clone.js",
     "build": "npm run rm-axios && npm run rm-lib && tsc && npm run pkg",
     "format": "prettier --write \"src/**/*.(js|ts)\"",
     "lint": "eslint src --ext .js,.ts",
@@ -25,9 +25,6 @@
     "scripts": "lib/**/*.js",
     "assets": "views/**/*",
     "targets": [
-      "node16-linux-arm64",
-      "node16-linux-x64",
-      "node16-macos-x64",
       "node16-win-x64"
     ],
     "outputPath": "lib"
